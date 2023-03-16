@@ -11,9 +11,21 @@ namespace ApiIsolated
         {
             var host = new HostBuilder()
                 .ConfigureFunctionsWorkerDefaults()
+                .ConfigureServices(services =>
+                {
+                    //services.AddCors(options =>
+                    //{
+                    //    options.AddDefaultPolicy(builder =>
+                    //        builder.WithOrigins("https://localhost:44338")
+                    //            .AllowAnyMethod()
+                    //            .AllowAnyHeader());
+                    //});
+                })
                 .Build();
 
             host.Run();
         }
     }
+
+
 }
